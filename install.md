@@ -15,6 +15,12 @@ CREATE TABLE users_resulttable(userId INT NOT NULL,imdbId INT,rating DECIMAL(3,1
 `code 'C:\ProgramData\MySQL\MySQL Server 5.7\my.ini'`
 添加`secure-file-priv=`
 重启mysql 
+
+## 创建需要的表
+python manage.py makemigrations
+python manage.py migrate
+
+
 ### 载入数据
 load data local infile "C:/Users/yxf/Desktop/MovieRecommend/data/users_resulttable.csv" into table users_resulttable fields terminated by ',' lines terminated by '\n' (userId,imdbId,rating);
 
@@ -27,3 +33,6 @@ LINES TERMINATED BY '\n'
 
 
 alter table users_resulttable add column id int auto_increment PRIMARY KEY; 
+
+## 启动项目
+python manage.py runserver

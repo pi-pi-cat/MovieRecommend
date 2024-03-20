@@ -1,8 +1,8 @@
-from django.urls import path, re_path
+from django.conf.urls import url
 from . import views
 
 app_name = "users"
 urlpatterns = [
-    path("register/", views.register, name="register"),
-    path("showmessage/", views.showmessage, name="showmessage"),
+    url(r"^register/", views.register, name="register"),
+    url(r"^showmessage/", views.showmessage, name="showmessage"),
 ]
